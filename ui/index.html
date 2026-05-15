@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tri-Intelligence Fraud Defense</title>
+    <meta
+      name="description"
+      content="Tri-Intelligence Network is an AI-powered fraud and mule account detection platform combining BERT, BiLSTM, and GNNs."
+    />
+    <link rel="stylesheet" href="/ui/assets/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="background-grid" aria-hidden="true"></div>
+      <header class="topbar glass">
+        <div class="brand">
+          <div class="brand-mark">TI</div>
+          <div>
+            <p class="brand-title">Tri-Intelligence Network</p>
+            <p class="brand-subtitle">AI fraud and mule-account defense platform</p>
+          </div>
+        </div>
+        <nav class="topnav">
+          <a href="#sandbox">Sandbox</a>
+          <a href="#anatomy">Explainability</a>
+          <a href="#specs">Tech Stack</a>
+        </nav>
+      </header>
+
+      <main class="content">
+        <section class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow">Deep Tech Fraud Command</div>
+            <h1>Tri-Intelligence Fraud Defense.</h1>
+            <p class="hero-text">
+              Real-time multimodal detection combining BERT, BiLSTM, and GNNs. Built to expose scam language,
+              behavioral drift, and mule-account relationships before they turn into loss events.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#sandbox">Enter the Sandbox</a>
+              <a class="btn btn-secondary" href="#anatomy">Explore the Anatomy of a Flag</a>
+            </div>
+            <div class="mini-grid">
+              <article class="mini-card glass">
+                <span>Multimodal</span>
+                <p>Text, behavior, and graph intelligence fused into one risk verdict.</p>
+              </article>
+              <article class="mini-card glass">
+                <span>Explainable</span>
+                <p>Operator-friendly cues for why a message or account was flagged.</p>
+              </article>
+              <article class="mini-card glass">
+                <span>Responsive</span>
+                <p>Built to scale cleanly across mobile, tablet, and desktop command views.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="scene">
+              <div class="scene-card glass">
+                <div class="scene-header">
+                  <span>Tri-Intelligence</span>
+                  <span>Live Mesh</span>
+                </div>
+                <div class="scene-layout">
+                  <div class="risk-lattice panel">
+                    <p>Risk Lattice</p>
+                    <div class="bar-group">
+                      <span style="height:68px"></span>
+                      <span style="height:94px"></span>
+                      <span style="height:54px"></span>
+                      <span style="height:78px"></span>
+                      <span style="height:102px"></span>
+                    </div>
+                    <div class="layer-tags">
+                      <span>BERT</span>
+                      <span>BiLSTM</span>
+                      <span>GNN</span>
+                    </div>
+                  </div>
+                  <div class="network-panel panel">
+                    <div class="orb orb-a"></div>
+                    <div class="orb orb-b"></div>
+                    <div class="orb orb-c"></div>
+                    <div class="ring ring-a"></div>
+                    <div class="ring ring-b"></div>
+                    <div class="ring ring-c"></div>
+                    <div class="network-caption">Mule-cluster probability mapped across 48 relational pathways.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="metrics-row">
+          <article class="metric glass">
+            <span>Model Metric</span>
+            <h3 data-counter="99.12" data-suffix="%">0%</h3>
+            <p>Accuracy</p>
+          </article>
+          <article class="metric glass">
+            <span>Model Metric</span>
+            <h3 data-counter="100" data-suffix="%">0%</h3>
+            <p>Recall</p>
+          </article>
+          <article class="metric glass">
+            <span>Model Metric</span>
+            <h3 data-counter="280" data-suffix="ms">0ms</h3>
+            <p>Real-time Processing</p>
+          </article>
+        </section>
+
+        <section id="sandbox" class="sandbox glass">
+          <div class="sandbox-form">
+            <div class="section-tag">Live Detection Sandbox</div>
+            <h2>Threat signal fusion in motion</h2>
+            <div class="field">
+              <label for="messageInput">Message Analysis</label>
+              <textarea
+                id="messageInput"
+                rows="7"
+                placeholder="Paste a suspicious WhatsApp, SMS, or payment request here..."
+              >Urgent security notice: your account is under review. Confirm your OTP immediately and transfer the holding amount to avoid permanent suspension.</textarea>
+            </div>
+            <div class="field">
+              <label for="accountInput">Account / Transaction ID</label>
+              <input id="accountInput" type="text" value="TXN-2389-ALPHA" placeholder="ACC-10328 or +91..." />
+            </div>
+            <div class="control-card">
+              <div>
+                <p class="control-title">Inference pipeline</p>
+                <p class="control-subtitle">Simulated multimodal loading sequence</p>
+              </div>
+              <div class="control-actions">
+                <button id="sampleBtn" class="btn btn-secondary" type="button">Load Sample</button>
+                <button id="analyzeBtn" class="btn btn-primary" type="button">Analyze</button>
+              </div>
+            </div>
+            <div class="stage-list">
+              <div class="stage-card" data-stage="0">
+                <strong>BERT Semantic Parsing</strong>
+                <span>Scanning urgency markers, OTP prompts, and social-engineering cues.</span>
+              </div>
+              <div class="stage-card" data-stage="1">
+                <strong>BiLSTM Behavioral Analysis</strong>
+                <span>Evaluating sequential transaction context and sender activity patterns.</span>
+              </div>
+              <div class="stage-card" data-stage="2">
+                <strong>GNN Network Mapping</strong>
+                <span>Tracing relational risk and mule-account cluster probability.</span>
+              </div>
+            </div>
+            <div id="errorBox" class="error-box hidden"></div>
+          </div>
+
+          <div class="result-card">
+            <div class="result-head">
+              <div>
+                <div class="section-tag">Decision Surface</div>
+                <h3>Real-time verdict</h3>
+              </div>
+              <div id="statusChip" class="status-chip safe">SECURE</div>
+            </div>
+
+            <div class="gauge-wrap">
+              <svg class="gauge" viewBox="0 0 120 120" aria-label="Risk score gauge">
+                <circle class="gauge-track" cx="60" cy="60" r="54"></circle>
+                <circle id="gaugeValue" class="gauge-value safe-stroke" cx="60" cy="60" r="54"></circle>
+              </svg>
+              <div class="gauge-center">
+                <span>Risk Score</span>
+                <strong id="riskPercent">17%</strong>
+              </div>
+            </div>
+
+            <div class="result-metrics">
+              <article>
+                <span>Network Risk</span>
+                <strong id="networkRisk">2%</strong>
+              </article>
+              <article>
+                <span>Mule Signal</span>
+                <strong id="muleSignal">Clear</strong>
+              </article>
+            </div>
+
+            <div id="phaseBox" class="phase-box hidden">
+              <div class="phase-label">Current phase</div>
+              <div id="phaseTitle" class="phase-title"></div>
+              <p id="phaseDetail" class="phase-detail"></p>
+            </div>
+
+            <div id="recommendations" class="recommendations">
+              <div class="recommendation">Message and account signals remain within the secure operating range.</div>
+              <div class="recommendation">Recommended action: standard monitoring is sufficient.</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="anatomy" class="anatomy">
+          <div class="anatomy-head">
+            <div class="section-tag">The Anatomy of a Flag</div>
+            <h2>Three intelligence layers. One defensible decision.</h2>
+            <p>Hover each module to see how the model turns language, behavior, and network topology into a single trust score.</p>
+          </div>
+          <div class="explain-grid">
+            <article class="explain-card glass">
+              <div class="icon-badge">B1</div>
+              <h3>BERT Signal Layer</h3>
+              <p>Reads message intent and scam phrasing in real time.</p>
+              <div class="tooltip-card">
+                BERT isolates pressure tactics, impersonation patterns, fake urgency, and credential-harvesting cues hidden inside natural language.
+              </div>
+            </article>
+            <article class="explain-card glass">
+              <div class="icon-badge">L2</div>
+              <h3>BiLSTM Behavior Layer</h3>
+              <p>Models temporal drift across transaction behavior.</p>
+              <div class="tooltip-card">
+                BiLSTM compares the current event to historical velocity, timing, and behavioral anomalies to surface fraud-like sequences.
+              </div>
+            </article>
+            <article class="explain-card glass">
+              <div class="icon-badge">G3</div>
+              <h3>GNN Network Layer</h3>
+              <p>Maps suspicious account relationships and mule clusters.</p>
+              <div class="tooltip-card">
+                GNN relational connections indicate mule-account clusters, laundering paths, and repeated sender linkages across the network graph.
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <footer id="specs" class="footer glass">
+          <div>
+            <h3>Tri-Intelligence Network</h3>
+            <p>
+              Frontend stack: HTML, CSS, JavaScript. Detection stack: FastAPI and PyTorch serving multimodal fraud inference in real time.
+            </p>
+          </div>
+          <div class="tech-pills">
+            <span>FastAPI</span>
+            <span>PyTorch</span>
+            <span>BERT</span>
+            <span>BiLSTM</span>
+            <span>GNN</span>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <script src="/ui/assets/app.js"></script>
+  </body>
+</html>

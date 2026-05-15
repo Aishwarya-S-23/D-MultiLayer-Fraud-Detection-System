@@ -1,0 +1,15 @@
+{
+  "checkpoint": "tri_intel_best.pth",
+  "test_size": 5000,
+  "threshold": 0.5,
+  "accuracy": 0.9912,
+  "precision": 0.982525814138205,
+  "recall": 1.0,
+  "f1_score": 0.9911858974358975,
+  "confusion_matrix": {
+    "tn": 2482,
+    "fp": 44,
+    "fn": 0,
+    "tp": 2474
+  }
+}
