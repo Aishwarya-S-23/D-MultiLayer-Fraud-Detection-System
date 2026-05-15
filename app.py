@@ -49,7 +49,7 @@ def _create_engine() -> FraudInferenceEngine:
     return FraudInferenceEngine(threshold=MODEL_THRESHOLD)
 
 
-engine = _create_engine()
+engine = None
 
 if UI_DIR.exists():
     app.mount("/ui/assets", StaticFiles(directory=UI_DIR), name="ui-assets")
@@ -70,29 +70,23 @@ def ui_app():
 
 
 @app.get("/health")
-def health() -> Dict[str, Any]:
-    model_device = str(next(engine.model.parameters()).device)
-    return {
-        "status": "ok",
-        "model_loaded": True,
-        "model_path": engine.model_path,
-        "device": model_device,
-    }
-
+def health():
+    return {"status": "ok", "server": "running"}
 
 @app.post("/predict", response_model=PredictResponse)
-def predict(payload: PredictRequest) -> Dict[str, Any]:
-    try:
-        result = engine.predict_message_and_account(
-            message=payload.message,
-            sender_account=payload.sender_account,
-            transaction_sent=payload.transaction_sent,
-            numeric_features=payload.numeric_features,
-            threshold=payload.threshold,
-        )
-        return result
-    except Exception as exc:
-        raise HTTPException(status_code=400, detail=str(exc))
+def predict(payload: PredictRequest):
+    global engine
+    if engine is None:
+        engine = _create_engine()
+
+    result = engine.predict_message_and_account(
+        message=payload.message,
+        sender_account=payload.sender_account,
+        transaction_sent=payload.transaction_sent,
+        numeric_features=payload.numeric_features,
+        threshold=payload.threshold,
+    )
+    return result
 
 
 @app.get("/webhook")
